@@ -41,6 +41,10 @@ void license() {
 			System.out.println("license will not be issued if person is minor");
 			
 		}
+		{
+			System.out.println("License will be issued");
+			
+		}
 		
 		
 }
