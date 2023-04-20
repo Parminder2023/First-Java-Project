@@ -1,5 +1,6 @@
 package stringMethod;
 
+
 public class StringDemo {
 
 	String cityName;
@@ -7,29 +8,16 @@ public class StringDemo {
 
 	String[] cityNames = { "Toronto", "Ottawa", "Brampton", "Hamilton", "London", "Mississauga", "Burlington",
 			"Kingston", "kitchener" };
-	private CharSequence fun;
+	
 
-	String doesStringContainGivencity(String cityToCheck) {
-		String cityFound = null;
+	int doesStringContainGivencity(String cityToCheck) {
 		int count = 0;
-
 		for (int i = 0; i < cityNames.length; i++) {
-
 			if (cityNames[i].contains(cityToCheck)) {
-				cityFound = cityNames[i];
-
 				count += 1;
-
 			}
 		}
-		if (count == 1) {
-			cityFound = cityToCheck;
-		} else {
-			cityFound = "city not found";
-
-		}
-		return cityFound;
-
+		return count;
 	}
 
 	void checkCitiesEndingwithTon() {
@@ -43,15 +31,36 @@ public class StringDemo {
 	}
 
 	void replaceTonWithFunInTheseCityNames() {
-		for (int i = 0; i < cityNames.length; i++) {
-			
-			
-			//if (cityNames[i].replace(cityName, fun) != "null" {
-				
-				//System.out.println("replaceTonWithFun" + cityNames[i]);
-
+		for(int i = 0; i< cityNames.length; i++) {
+			if(cityNames[i].contains("ton")){
+				String replacedString = cityNames[i].replace("ton","fun");
+				System.out.println("Replaced City Names: " +replacedString);
 			}
 		}
 	}
+	
+	void splitAddress()
+	{
+		String address = "100 Queen Street, Toronto, M5V 3E3";
+	    String[] splitAddress = address.split(",");
+	    for (int i = 0; i<splitAddress.length; i++) {
+	    	if(i==0) {
+	    		System.out.println("Street Address: "+splitAddress[i]);
+	    	}
+	    	else if (i == 1) {
+	    		System.out.println("City: "+splitAddress[i]);
+	    	}
+	    	else {
+	    		System.out.println("Zip: "+splitAddress[i]);
+	    	}
+	    	
+	    }
+	}
+
+	
+		
+	}
+		
+	
 
 
