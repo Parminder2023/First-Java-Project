@@ -12,9 +12,9 @@ public class StringDemoMain {
 		System.out.println("enter name of city");
 		String cityTosearch = sc.nextLine();
 
-		String cityFound = stringDemo.doesStringContainGivencity(cityTosearch);
-		if (cityFound.equals(cityTosearch)) {
-			System.out.println("city found as" + cityFound);
+		int cityFound = stringDemo.doesStringContainGivencity(cityTosearch);
+		if (cityFound>0) {
+			System.out.println("city found as " + cityTosearch);
 		} else {
 			System.out.println("city not found");
 
@@ -22,10 +22,9 @@ public class StringDemoMain {
 		System.out.println("cities ending with ton are");
 		stringDemo.checkCitiesEndingwithTon();
 
-		
-		System.out.println("replace cities ending with ton to fun ");
-		stringDemo.cityName= "endingWithTon";
 		stringDemo.replaceTonWithFunInTheseCityNames();
+		
+		stringDemo.splitAddress();
+		
 	}
-
 }
