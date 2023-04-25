@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class GuessTheStudent {
 
-	// words: 
+	// words:
 	// points: 5
 	// Input: x
-	//points : o o o
+	// points : o o o
 
 	String[] studentNames = { "aleena", "angel", "asha", "clemin", "gopesh", "hamneet", "jimna", "jobin", "jude",
 			"kamaldeep", "manpreet k", "manpreet s", "mariya", "namitha", "neelam", "nisha", "parminder", "rajat",
@@ -26,16 +26,13 @@ public class GuessTheStudent {
 		System.out.print("The word has " + randomWords.length() + " letters. ");
 		int points = 5;
 
-		while (points > 0 ) {
-			System.out.print("points: ");
+		while (points > 0) {
+			System.out.print("points: " + points);
 			for (int i = 0; i < points; i++) {
-
-				System.out.print("o");
-				
 
 				break;
 			}
-			 System.out.println();
+			System.out.println();
 			System.out.print("Guess a letter: ");
 
 			String GuessALetter = sc.nextLine();
@@ -52,11 +49,9 @@ public class GuessTheStudent {
 			if (!isGuessCorrect) {
 				points = points - 1;
 			}
-			
 
 			boolean isGameFinished = true;
 
-		
 			for (int i = 0; i < letters.length; i++) {
 				if (letters[i] == '_') {
 					isGameFinished = false;
