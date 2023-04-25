@@ -10,7 +10,6 @@ public class GuessTheStudentMain {
 		GuessTheStudent student = new GuessTheStudent();
 		student.GuessNameOfStudent();
 		System.out.println("Starting new game");
-		
-		}
-	}
 
+	}
+}
