@@ -4,27 +4,43 @@ import java.util.Scanner;
 
 public class OnlineBanking extends BankOperations {
 
-	Scanner sc = new Scanner(System.in);
-	
-	 double CorrectAccountNumber = this.accountNumber;
-	String Correctpassword = this.onlineBankingPassword;
-	private double balance= this.totalBalance;
+	@Override
+	public void changePinPassword() {
 
-	 void onlineBank() {
-		System.out.println("Choose 1 for withdraw");
-		
-		double AccountNumber = sc.nextDouble();
-		
-		System.out.println("Please enter your online banking password");
-		
-		String Accountpassword = sc.nextLine();
-		
-		if (AccountNumber == CorrectAccountNumber && Correctpassword == Accountpassword) {
-			
-			System.out.println("Balance" + balance);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter your password : ");
+		String input = sc.next();
+		final int NUM_UPPER_LETTERS = 1;
+		final int NUM_LOWER_LETTERS = 6;
+		final int NUM_DIGITS = 1;
 
-		} else {
-			System.out.println("Incorrect account number and password");
+		int inputlen = 0;
+		int Uppercount = 1;
+		int lowercount = 6;
+		int digitcount = 1;
+		int specialCharacter = 1;
+
+		for (int i = 0; i < inputlen; i++) {
+			char ch = input.charAt(i);
+
+			if (Character.isUpperCase(ch))
+				Uppercount++;
+			else if (Character.isLowerCase(ch))
+				lowercount++;
+			else if (Character.isDigit(ch))
+				digitcount++;
+
+		}
+		if (Uppercount >= NUM_UPPER_LETTERS && lowercount >= NUM_LOWER_LETTERS && digitcount >= NUM_DIGITS)
+			System.out.println("Valid password");
+		else {
+			System.out.println("The password did not have enough of the following: ");
+			if (Uppercount < NUM_UPPER_LETTERS)
+				System.out.println("uppercase letters ");
+			if (lowercount < NUM_LOWER_LETTERS)
+				System.out.println("lower letters");
+			if (digitcount < NUM_DIGITS)
+				System.out.println("digits");
 
 		}
 
