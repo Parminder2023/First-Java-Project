@@ -4,59 +4,42 @@ import java.util.Scanner;
 
 public class ATM extends BankOperations {
 
-	Scanner sc = new Scanner(System.in);
-	private int PINcompared = this.PIN;
+	int enteredPIN;
+	int correctPIN = 1234;
+	int oldPIN=1234;
+	int updatedPIN;
+	int choice;
 
-	void ATMtransaction()
-	{
-		while(true)
-		{
-			System.out.println("please enter your PIN");
-	        
-        	int PIN = sc.nextInt();
-        	if(PIN==PINcompared) {
-        		
-        	
+	@Override
 
-	    System.out.println("Choose 1 for Withdraw"); 
-	   
-        System.out.println("Choose 2 for Deposit"); 
-    
-        System.out.println("Choose 3 for View Balance"); 
-        System.out.println("Choose 4 for exit");
-     
-        int choice = sc.nextInt();  
-        switch(choice)
-        {
-        case 1:
-        	
-        	withdraw();
-        	break;
-        	
-        case 2:
-        	deposit();
-        break;
-        
-        case 3:
-        	viewBalance();
-        	break;
-        case 4:
-        	System.exit(0);
-        	
-        	
-        }
-        
-		}
-	
-	
+	public void changePinPassword() {
+		Scanner sc = new Scanner(System.in);
+		int counter = 3;
 		
-	
-	else 
-	{
-    	System.out.println("PIN incorrect");
-    }
-}
-}
-}
+		while (counter != 0) {
+			System.out.println("enter your 4 digit PIN : ");
+			int enteredPIN = sc.nextInt();
 
+			if (enteredPIN == correctPIN) {
+				System.out.println("update your PIN");
+				
+				int updatedPIN=sc.nextInt();
+				
+				if(updatedPIN==oldPIN);
+				{
+				System.out.println("updated PIN is same as : " + oldPIN);
+	              
+			}
+			}
+	               else {
+				
+				System.out.println("Invalid PIN");
+
+	               }break;
+		}
+		if(counter==0) {
+			System.out.println("your account is locked");
+		}
+	}
+}
 
