@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class OnlineBanking extends BankOperations {
 
-	@Override
 	public void changePinPassword() {
 
 		Scanner sc = new Scanner(System.in);
