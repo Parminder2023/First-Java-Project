@@ -46,4 +46,24 @@ public class OnlineBanking extends BankOperations {
 
 	}
 
+	public double withdraw(double withdraw, double totalBalance) {
+		double updatedBalance = 0.0;
+		if (withdraw > totalBalance) {
+			System.out.println("Insufficient Balance");
+		} else {
+			updatedBalance = totalBalance - withdraw;
+		}
+		return updatedBalance;
+	}
+
+	public double deposit(double deposit, double totalBalance) {
+		double updatedBalance = 0;
+		if (deposit > totalBalance) {
+			System.out.println("enter the amount to be deposit");
+		} else {
+			updatedBalance = totalBalance + deposit;
+
+		}
+		return updatedBalance;
+	}
 }
