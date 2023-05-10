@@ -19,13 +19,16 @@ public class BankOperationsMain {
 		switch (choice) {
 		case 1:
 			bc = new ATM();
-			bc.changePinPassword();
+			bc.changePinPassword(acc);
+			
 
 			break;
 		case 2:
 			bc = new OnlineBanking();
-			bc.changePinPassword();
+			bc.changePinPassword(acc);
+			
 			break;
+			
 			
 		}
 		
@@ -62,4 +65,4 @@ public class BankOperationsMain {
 	
 	
 
-//		
+	
