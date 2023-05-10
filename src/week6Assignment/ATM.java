@@ -4,48 +4,35 @@ import java.util.Scanner;
 
 public class ATM extends BankOperations {
 
-	int enteredPIN;
-	int correctPIN = 1234;
-	int oldPIN = 1234;
-	int choice;
-
+	Scanner sc = new Scanner(System.in);
 	@Override
-
 	public void changePinPassword() {
-		Scanner sc = new Scanner(System.in);
-		int counter = 3;
+		
+		
+	}
 
-		while (counter != 0) {
-			System.out.println("enter your 4 digit PIN : ");
-			int enteredPIN = sc.nextInt();
+	
+	public void changePinPassword(PersonAccount account) {
+		
+		System.out.println("Enter new ATM pin number");
+		int newPin = sc.nextInt();
 
-			if (enteredPIN == correctPIN) {
-				System.out.println("update your PIN");
+		while (newPin == account.getPIN() || (String.valueOf(newPin).length() < 4)) {
 
-				int updatedPIN = sc.nextInt();
-
-				if (updatedPIN == oldPIN) {
-					System.out.println("updated PIN is same as oldPIN");
-				}
-			} else {
-				System.out.println("Invalid PIN");
+			if (newPin == account.getPIN()) {
+				System.out.println("Entered pin is same as old pin. Please use different pin");
 			}
-			break;
+			if (String.valueOf(newPin).length() < 4) {
+				System.out.println("Entered pin should have atleast 4 characters. Please try again!");
+			}
+			System.out.println("Enter new ATM pin number");
+			newPin = sc.nextInt();
+
 		}
-		if (counter == 0) {
-			System.out.println("your account is locked");
-		}
+		System.out.println("Updated pin is : " + newPin);
+
 	}
 
-	@Override
-	public double withdraw(double withdraw, double totalBalance) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double deposit(double deposit, double totalBalance) {
-		return 0;
-	}
-
+	
+	
 }
