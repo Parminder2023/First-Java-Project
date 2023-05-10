@@ -38,5 +38,11 @@ public class PersonAccount{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public PersonAccount(String accountNumber, double balance, int pin, String password) {
+		super();
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+		this.PIN = pin;
+		this.password = password;
+}
 }
